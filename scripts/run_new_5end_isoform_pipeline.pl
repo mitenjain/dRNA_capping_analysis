@@ -5,13 +5,13 @@ use Cwd;
 my $DIR = getcwd;
 
 #human genome :
-my $genome = "./GRC38_hg20/GRCh38.p3.genome.fa";
+my $genome = "./GRCh38.p3.genome.fa";
 #index of the human genome (obtained using samtools faidx :
-my $faidx = "./GRC38_hg20/GRCh38.p3.genome.fa.fai";
+my $faidx = "./GRCh38.p3.genome.fa.fai";
 #each transcripts TSS (+strand = start, - strand = end)
-my $annotation_tss = "./GRC38_hg20/annotation/gencode.v32.annotation_TSS_sorted.gtf";
+my $annotation_tss = "./gencode.v32.annotation_TSS_sorted.gtf";
 #currated subset of genes used to identify genes with new TSS :
-my $annotation_gene = "./GRC38_hg20/annotation/gencode.v32.annotation_havana_genes.gtf";
+my $annotation_gene = "./gencode.v32.annotation_havana_genes.gtf";
 #fastq files (adaptor trimmed away) 
 my @fastq = <GM12878_06_18_19_NEB_negativeControl.fastq>;
 
