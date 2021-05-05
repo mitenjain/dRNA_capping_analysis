@@ -5,15 +5,15 @@ use Cwd;
 my $DIR = getcwd;
 
 #human genome :
-my $genome = "/mnt/home/ettwiller/laurence/genome/GRC38_hg20/GRCh38.p3.genome.fa";
+my $genome = "./GRC38_hg20/GRCh38.p3.genome.fa";
 #index of the human genome (obtained using samtools faidx :
-my $faidx = "/mnt/home/ettwiller/laurence/genome/GRC38_hg20/GRCh38.p3.genome.fa.fai";
+my $faidx = "./GRC38_hg20/GRCh38.p3.genome.fa.fai";
 #each transcripts TSS (+strand = start, - strand = end)
-my $annotation_tss = "/mnt/home/ettwiller/laurence/genome/GRC38_hg20/annotation/gencode.v32.annotation_TSS_sorted.gtf";
+my $annotation_tss = "./GRC38_hg20/annotation/gencode.v32.annotation_TSS_sorted.gtf";
 #currated subset of genes used to identify genes with new TSS :
-my $annotation_gene = "/mnt/home/ettwiller/laurence/genome/GRC38_hg20/annotation/gencode.v32.annotation_havana_genes.gtf";
+my $annotation_gene = "./GRC38_hg20/annotation/gencode.v32.annotation_havana_genes.gtf";
 #fastq files (adaptor trimmed away) 
-my @fastq = <../adaptor_trimmed/GM12878_06_18_19_NEB_negativeControl*.fastq>;
+my @fastq = <GM12878_06_18_19_NEB_negativeControl.fastq>;
 
 
 my $size = @fastq;
@@ -27,9 +27,9 @@ for(my $i=0; $i<$size; $i++)
     $generic = "Run_".$generic;
     my $sam = $generic.".sam";
     #mapping =============================
-    my $command_bis = "/home/ettwiller/exe/minimap2-2.9_x64-linux/minimap2 --secondary=no -ax splice -k14 -uf $genome $fq > $sam ";
+    my $command_bis = "minimap2 --secondary=no -ax splice -k14 -uf $genome $fq > $sam ";
     my $bam = $generic.".bam";    
-    my $sam_untrimmed = "/mnt/home/ettwiller/laurence/projects/Oxford_nanopores/direct_RNA_sequencing/cupper_free/Human_GM12878/mapping_gr35/".$sam;
+    my $sam_untrimmed = "".$sam;
     my $command1 = "samtools view -F 2048 -bS $sam | samtools sort -  -o $bam"; #remove remaining secondary alignments (despite -N 0)
     my $command3 = "samtools index $bam";
     #======================================
