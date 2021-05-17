@@ -56,7 +56,7 @@ for(my $i=0; $i<$size; $i++)
     my $command4 = "perl get_softclipping_seq.pl $sam 15 remove > $filtered_sam";
     my $command5 = "samtools view -bS $filtered_sam | samtools sort -  -o $filtered_bam";
     #get the TSS :
-    my $command6 = "perl ~/exe/TSS-master/bam2firstbasebam.pl --bam $filtered_bam --out $tssbam --genome $faidx";
+    my $command6 = "perl bam2firstbasebam.pl --bam $filtered_bam --out $tssbam --genome $faidx";
     my $command7 = "samtools index $tssbam";
     my $command8 = "bedtools bamtobed -i $tssbam > $tssbed";
     #keep only read ID for which the nearest annotated TSS is > 300 bp away.
