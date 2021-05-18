@@ -32,6 +32,7 @@ used in place of this one.
 ### Note
  - The U’s in the fastq file sequence need to be converted to T’s before running Porechop.
  - Use NanoFilt or Guppy to filter the reads for q7 or better before Porechop (pass reads).
+ - Unzip the gtf files in [scripts](scripts) before executing the code
 
 # Contact
 Please contact Logan Mulroney (lmulrone@soe.ucsc.edu) or Miten Jain (miten@soe.ucsc.edu) if you have any questions. 
