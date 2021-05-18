@@ -2,7 +2,7 @@
 Analysis code for 5' capping-based nanopore direct RNA data (NEB-UCSC collaboration)
 
 # Data Availability
-The data used in the preprint are available here: http://public.gi.ucsc.edu/~miten/logan/dRNA_capping_data/
+The data used in the preprint are available on ENA under accession number [PRJEB43374](https://www.ebi.ac.uk/ena/browser/view/PRJEB43374)
 
 # Using Porechop
 For adapter detection please download [Porechop](https://github.com/rrwick/Porechop)
