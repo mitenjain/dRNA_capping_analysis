@@ -32,7 +32,21 @@ used in place of this one.
 ### Note
  - The U’s in the fastq file sequence need to be converted to T’s before running Porechop.
  - Use NanoFilt or Guppy to filter the reads for q7 or better before Porechop (pass reads).
+
+# new 5end isoform pipeline
+
  - Unzip the gtf files in [scripts](scripts) before executing the code
+
+ - In the preamble of run_new_5end_isoform_pipeline.pl make the following changes:
+   1. change the path for genome to the location of the reference genome on your system.  
+   2. change the path for faidx to the location of the reference genome index file on your system.
+   3. change the path for fastq to the location of the porechop adapter trimmed fastq file on your system.
+ - If you're not using dRNA nanopore sequencing data derived from human samples, you will also need to make the following changes:
+   1. change the path for annotation_TSS to the location of a gtf file containing only positions of annotated TSSs on your system.
+   2. change the path for annotation_gene to the location of a gtf file of gene annotations. This is used to assign reads to genes. For this study, we used only the HAVANA protein coding genes for annotation. 
+
+ - execute the perl script, run_new_5end_isoform_pipeline.pl
+
 
 # Contact
 Please contact Logan Mulroney (lmulrone@soe.ucsc.edu) or Miten Jain (miten@soe.ucsc.edu) if you have any questions. 
