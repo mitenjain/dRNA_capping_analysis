@@ -1,5 +1,5 @@
 # dRNA_capping_analysis
-Analysis code for 5' capping-based nanopore direct RNA data (NEB-UCSC collaboration)
+Analysis code for the pre-print "Identification of high confidence human poly(A) RNA isoform scaffolds using nanopore sequencing" (NEB-UCSC collaboration)
 
 # Data Availability
 The data used in the preprint are available on ENA under accession number [PRJEB43374](https://www.ebi.ac.uk/ena/browser/view/PRJEB43374)
