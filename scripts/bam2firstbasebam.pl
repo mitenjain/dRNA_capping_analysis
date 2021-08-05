@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -30,6 +30,9 @@ GetOptions ("bam=s" => \$bamfile,    # numeric
 if (!$bamfile || !$genome || !$out ) {die "USAGE : perl $0 --bam bamfile --genome genome.fai --out outfile.bam \n";}
 if ($lib_type ne "FR" && $lib_type ne "RF" && $lib_type ne "F"){ die $error_message;
 }
+my $generic = $bamfile;
+$generic =~ s/\.bam//;
+$generic =~ s/.*\///g;
 
 my $resulting_bam;
 if ($lib_type eq "F") #single read library with R1 being the most 5' end of the transcripts. 
@@ -38,7 +41,7 @@ if ($lib_type eq "F") #single read library with R1 being the most 5' end of the 
 }
 elsif ($lib_type eq "FR")
 {
-    my $tmp = "R1";
+    my $tmp = $generic."_R1";
     #extract R1 from bam
     $resulting_bam = $tmp.".bam";
     my $library_command = "samtools view -f64 -b $bamfile | samtools sort -o $resulting_bam -";
@@ -46,7 +49,7 @@ elsif ($lib_type eq "FR")
 }
 elsif ($lib_type eq "RF")
 {
-    my $tmp = "R2";
+    my $tmp = $generic."_R2";
     #extract R1 from bam
     $resulting_bam = $tmp.".bam";
     my $library_command = "samtools view -f128 -b $bamfile | samtools sort -o $resulting_bam -";
@@ -55,18 +58,10 @@ elsif ($lib_type eq "RF")
 }
 
 
-
-
-
-
-my $generic = $bamfile;
-$generic =~ s/\.bam//;
-$generic =~ s/.*\///g;
-
 print STDERR "Generating the bam files - be patient it may take a while - \n";
 
 
-my $file_tmp = "bamtmp";my $bed = "bedtmp";my $newbam = $out;
+my $file_tmp = $generic."bam_tmp";my $bed = $generic."bedtmp";my $newbam = $out;
 $newbam =~ s/\.bam//;
 #first convert your bam to bed. 
 my $command = "bedtools bamtobed -cigar  -i $resulting_bam > $file_tmp"; 
