@@ -38,6 +38,7 @@ used in place of this one.
  - Use the gtf files in [data](data) before executing the code
 
  - Execution for run_5end_isoform_pipeline_for_github.pl 
+
     perl run_5end_isoform_pipeline_for_github.pl --genome genome.fa --fai genome.fa.fai --tss annotated_tss.gtf --genes annotated_genes.gtf --bam bamfile.bam
 
 
