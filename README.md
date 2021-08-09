@@ -42,15 +42,12 @@ used in place of this one.
     perl run_5end_isoform_pipeline_for_github.pl --genome genome.fa --fai genome.fa.fai --tss annotated_tss.gtf --genes annotated_genes.gtf --bam bamfile.bam
 
 
- - In the preamble of run_new_5end_isoform_pipeline.pl make the following changes:
-   1. change the path for genome to the location of the reference genome on your system.  
-   2. change the path for faidx to the location of the reference genome index file on your system.
-   3. change the path for fastq to the location of the porechop adapter trimmed fastq file on your system.
- - If you're not using dRNA nanopore sequencing data derived from human samples, you will also need to make the following changes:
-   1. change the path for annotation_TSS to the location of a gtf file containing only positions of annotated TSSs on your system.
-   2. change the path for annotation_gene to the location of a gtf file of gene annotations. This is used to assign reads to genes. For this study, we used only the HAVANA protein coding genes for annotation. 
+    1. genome the reference genome used for the bam alignment. Expecting genome and not transciptome reference
+    2. fai the reference genome index file
+    3. tss a gtf file that has been processed such that only the 5, ends are used (a human TSS only genecode v32 is provided in the data folder)
+    4. genes the gene annotation gtf file. This can be of all annotations, but we had better results when we filtered for only protein coding genes. (A human HAVANA only protein coding genes gencode v32 file is provided in the data folder)
 
- - execute the perl script, run_new_5end_isoform_pipeline.pl
+ - Note, if you're not using dRNA nanopore sequencing data derived from human samples, you will also need to process an annottion gtf file into the TSS only file and either an unprocessed file or a file of only protein coding genes
 
 
 # Contact
