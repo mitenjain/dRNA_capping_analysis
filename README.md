@@ -25,7 +25,7 @@ The sequence could be inserted to the end of the ADAPTERS list
 You can also replace all other adapters with this one, but we haven’t had issues with other adapters being
 used in place of this one.
 
-### Porechop conditionsfor human data
+### Porechop conditions for human data
 
     --barcode_diff 1 –barcode_threshold 74 -i file.fastq -b outputdirectory
 
