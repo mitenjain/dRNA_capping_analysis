@@ -47,7 +47,7 @@ used in place of this one.
     3. tss a gtf file that has been processed such that only the 5 prime ends are used (a human TSS only genecode v32 is provided in the data folder)
     4. genes the gene annotation gtf file. This can be of all annotations, but we had better results when we filtered for only protein coding genes. (A human HAVANA only protein coding genes gencode v32 file is provided in the data folder)
 
- - Note, if you're not using dRNA nanopore sequencing data derived from human samples, you will also need to process an annottion gtf file into the TSS only file and either an unprocessed file or a file of only protein coding genes
+ - Note, if you're not using dRNA nanopore sequencing data derived from human samples, you will also need to process an annottion gtf into the TSS only gtf and either an unprocessed gtf or a gtf of only protein coding genes
 
 
 # Contact
