@@ -4,6 +4,13 @@ Analysis code for the pre-print "Identification of high confidence human poly(A)
 # Data Availability
 The data used in the preprint are available on ENA under accession number [PRJEB43374](https://www.ebi.ac.uk/ena/browser/view/PRJEB43374)
 
+# requirements
+ - perl (5.26.2)
+ - samtools (1.3.1)
+ - bedtools (2.29.2)
+ - minimap2 (2.17-r974-dirty)
+ - porechop (0.2.4)
+
 # Using Porechop
 For adapter detection please download [Porechop](https://github.com/rrwick/Porechop)
 
@@ -51,7 +58,6 @@ used in place of this one.
    2. change the path for annotation_gene to the location of a gtf file of gene annotations. This is used to assign reads to genes. For this study, we used only the HAVANA protein coding genes for annotation. 
 
  - execute the perl script, run_new_5end_isoform_pipeline.pl
-
 
 # Contact
 Please contact Logan Mulroney (lmulrone@soe.ucsc.edu) or Miten Jain (miten@soe.ucsc.edu) if you have any questions. 
