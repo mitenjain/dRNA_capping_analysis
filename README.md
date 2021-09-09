@@ -11,6 +11,9 @@ The data used in the preprint are available on ENA under accession number [PRJEB
  - minimap2 (2.17-r974-dirty)
  - porechop (0.2.4)
 
+# Note
+samtools, bedtools, minimap2 need to be in your path. 
+
 # Using Porechop
 For adapter detection please download [Porechop](https://github.com/rrwick/Porechop) version 0.2.4.
 
